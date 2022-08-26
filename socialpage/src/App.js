@@ -21,7 +21,7 @@ function App() {
     try {
       let response = await axios.get(`http://127.0.0.1:8000/page/`);
       setPage(response.data)
-  
+      console.log(response.data)
     } catch (error) {
       console.log(error.response.data)
     }
