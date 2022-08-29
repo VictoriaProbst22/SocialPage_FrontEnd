@@ -2,7 +2,7 @@ import React from "react";
 
 const DisplayPageData = ({pageData}) => {
 
-    console.log('This is pageData: ', pageData)
+    
 
     
 
