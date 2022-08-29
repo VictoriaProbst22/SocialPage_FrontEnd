@@ -1,7 +1,7 @@
 
 //import pages
 import Navbar from "./NavBar";
-import DisplayPageData from "./DisplayPage";
+import DisplayPageData from "./SocialPages/DisplayPage";
 
 //import technologies 
 import React, { useState, useEffect } from "react";
@@ -36,6 +36,7 @@ function App() {
   return (
     <div>
       <Navbar/>
+      <DisplayPageData pageData={page}/>
     </div>
   );
 }
