@@ -14,18 +14,8 @@ import axios from "axios";
 function App() {
 
   const [page, setPage] = useState([])
-  const [post, setPost] = useState([])
+  
 
-
-  const addToPage = async() =>{
-    try {
-      let response = await axios.post('http://127.0.0.1:8000/page/')
-      setPost(response.data)
-      console.log(response.data)
-    } catch (error) {
-      console.log(error.response.data)
-    }
-  }
 
 
   const getPageData = async() =>{
@@ -40,7 +30,7 @@ function App() {
   
   useEffect(()=>{
     getPageData();
-    addToPage();
+
   }, [])
 
 
@@ -49,7 +39,7 @@ function App() {
     <div>
       <Navbar/>
       <AddNewPost pageData={page} />
-      <DisplayPageData pageData={post}/>
+      <DisplayPageData pageData={page}/>
       
     </div>
   );

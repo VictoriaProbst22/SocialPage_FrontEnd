@@ -1,40 +1,63 @@
-import React, {useState} from "react";
+import axios from "axios";
+import React from "react";
+import useCustomForm from "../hooks/useCustomForm"
 
 const AddNewPost = (props) => {
-  const [name, setName] = useState('');
-  const [text, setText] = useState('');
-  const [date, setDate] = useState('');
-
-  function handleSubmit(event){
-    event.preventDefault();
-    let newPost ={
-        name: name, 
-        text: text, 
-        date: date,
+  
+    let initialValues ={
+        name: "",
+        text: "",
+        date: "",
     };
-    console.log("newPost :",newPost)
-   
 
+    const [formData, handleInputChange, handleSubmit] = useCustomForm(initialValues, addToPage)
+
+    
+  async function addToPage(){
+    try {
+        let response = await axios.post("http://127.0.0.1:8000/page/0", formData)
+    } catch (error) {
+        console.log(error.message)
+    }
   }
+   
+  
+  
 
-    return (<form onSubmit={handleSubmit}>
-        <div>
-            <label> Name </label>
-            <input type='text' value={name} onChange={(event)=> setName(event.target.value)} />
-        </div>
-        <div>
-            <label> Text </label>
-            <input type='text' value={text} onChange={(event)=> setText(event.target.value)} />
+    return (<div>
+        <form onSubmit={handleSubmit}>
+            <label>
+                Name: {" "}
+                <input
+                type='text'
+                name='name'
+                value={formData.name}
+                onChange={handleInputChange} />
+            </label>
+            <label>
+                Post: {" "}
+            </label>
+            <input
+            type='text'
+            name='text'
+            value={formData.text}
+            onChange={handleInputChange} />
+            <lable>
+                Date: {" "}
+            </lable>
+            <input
+            type='date'
+            name='date'
+            value={formData.date}
+            onChange={handleInputChange} />
 
-        </div>
-        <div>
-            <label> Date </label>
-            <input type='date' value={date} onChange={(event)=> setDate(event.target.value)} />
-        </div>
-        <div>
-            <button type="submit"> Post! </button>
-        </div>
-    </form>
+            <button> Add To Page! </button> 
+
+
+
+        </form>
+
+    </div>
     );
 }
  
