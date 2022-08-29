@@ -15,12 +15,13 @@ const AddNewPost = (props) => {
     
   async function addToPage(){
     try {
-        let response = await axios.post("http://127.0.0.1:8000/page/0", formData)
+        let response = await axios.post("http://127.0.0.1:8000/page/", formData)
     } catch (error) {
         console.log(error.message)
     }
   }
    
+
   
   
 
