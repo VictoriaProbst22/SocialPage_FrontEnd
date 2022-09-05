@@ -10,8 +10,10 @@ const DisplayPageData = ({pageData}) => {
         } catch (error) {
             console.log(error.message)
         }
+       
     }
 
+  
     
 
     return ( <div>
