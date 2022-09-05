@@ -1,0 +1,17 @@
+.active{
+    background-color: purple;
+    color: white;
+}
+
+.inactive{
+    background-color: blueviolet;
+    display: contents;
+}
+
+.button-style{
+    color: rgb(247, 192, 14);
+    text-align: justify;
+    margin: 4px 2px;
+    display: inline;
+    padding: 10px 25px;
+}
