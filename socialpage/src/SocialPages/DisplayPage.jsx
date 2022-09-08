@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
+import AddNewPost from "./AddFeed";
 
 const DisplayPageData = ({pageData}) => {
 
@@ -18,10 +19,15 @@ const DisplayPageData = ({pageData}) => {
 
     return ( <div>
         <h2>Feed: </h2>
+        <div> <AddNewPost/> </div>
         {pageData.map((item, index)=>{
+
+            
             return(
+                
                 <div>
                     
+                    {index + 1}
                     <li>{item.name}</li> 
                     <ul>{item.text}</ul> 
                     <ul>{item.date}</ul>
@@ -29,11 +35,14 @@ const DisplayPageData = ({pageData}) => {
                     <CustomButton message= "Like" />
                     <CustomButton message= "Dislike" />
                     <hr></hr>
+                    
                 </div>
                 
             )
+            
         })}
-    </div> );
+    </div>
+     );
 }
  
 export default DisplayPageData;

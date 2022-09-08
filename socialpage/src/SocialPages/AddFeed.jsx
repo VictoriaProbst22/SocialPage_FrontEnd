@@ -54,7 +54,7 @@ const AddNewPost = (props) => {
 
             <button> Add To Page! </button> 
 
-
+            
 
         </form>
 

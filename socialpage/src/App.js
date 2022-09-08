@@ -1,8 +1,8 @@
 
 //import pages
-import Navbar from "./NavBar";
+import Navbar from "./NavBar/NavBar";
 import DisplayPageData from "./SocialPages/DisplayPage";
-import AddNewPost from "./SocialPages/AddFeed";
+
 
 //import technologies 
 import React, { useState, useEffect } from "react";
@@ -38,7 +38,6 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <AddNewPost pageData={page} />
       <DisplayPageData pageData={page}/>
       
     </div>
