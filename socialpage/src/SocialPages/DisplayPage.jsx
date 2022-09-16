@@ -26,9 +26,8 @@ const DisplayPageData = ({pageData}) => {
             return(
                 
                 <div>
-                    
-                    {index + 1}
-                    <li>{item.name}</li> 
+                
+                    <ul>{item.name}</ul> 
                     <ul>{item.text}</ul> 
                     <ul>{item.date}</ul>
                     <button onClick={()=> deletePost(item)}>Delete</button>
