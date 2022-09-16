@@ -2,12 +2,12 @@
 //import pages
 import Navbar from "./NavBar/NavBar";
 import DisplayPageData from "./SocialPages/DisplayPage";
-import searchAPI from "./NASA API/searchAPI";
+import DisplayApi from "./NASA API/displayAPI";
+import SearchApi from "./NASA API/searchAPI";
 
 //import technologies 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SearchApi from "./NASA API/searchAPI";
 
 
 
@@ -20,9 +20,9 @@ function App() {
 
   const getPictureData = async() => {
     try {
-        let response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S')
+        let response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S&date=2014-11-09')
         console.log('Response Data: ', response.data)
-        setPicture(response.data.items)
+        setPicture(response.data)
     } catch (error) {
         console.log(error.response.data)
     }
@@ -55,7 +55,7 @@ function App() {
       <Navbar/>
       <DisplayPageData pageData={page}/>
       <SearchApi pictureData={getPictureData}/>
-      
+      <DisplayApi pictureResuts={picture} />
     </div>
   );
 }

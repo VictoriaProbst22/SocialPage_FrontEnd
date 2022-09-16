@@ -21,12 +21,15 @@ const SearchApi = (props) => {
   }
 
 
-    return ( <div>
+    return ( 
+    <form onSubmit={handleSubmit}>
+        <div>
         <input id="date" type="date" name="search_term" value={sTerm} onChange={onChange}></input>
         <button type="submit"> Search </button>
 
 
-    </div> );
+    </div>
+        </form> );
 }
  
 export default SearchApi;
