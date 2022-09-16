@@ -18,9 +18,9 @@ function App() {
   const [picture, setPicture] = useState([])
 
 
-  const getPictureData = async() => {
+  const getPictureData = async(userInput) => {
     try {
-        let response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S&date=2014-11-09')
+        let response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S&start_date')
         console.log('Response Data: ', response.data)
         setPicture(response.data)
     } catch (error) {

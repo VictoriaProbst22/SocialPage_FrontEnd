@@ -8,7 +8,8 @@ const DisplayApi = ({pictureResults}) => {
 
 
     return ( <div>
-        hello world
+        <h1>NASA API</h1>
+      <h2>Astronomy Picture of the Day</h2>
     </div> );
 }
  
