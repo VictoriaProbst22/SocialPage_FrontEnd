@@ -9,7 +9,7 @@ import SearchApi from "./NASA API/searchAPI";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
+// THIS IS GOING TO TAKE TIME AS IT IS A PERSONAL PROJECT AND ALSO APPLYING FOR SOFTWARE DEVELOPEMENT JOBS. THANKS FOR UNDERSTANDING
 
 
 function App() {
@@ -17,10 +17,11 @@ function App() {
   const [page, setPage] = useState([])
   const [picture, setPicture] = useState([])
 
+//Get NASA Picture By Search Date that is input by user. 
 
   const getPictureData = async(userInput) => {
     try {
-        let response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S&start_date=${userInput}`)
+        let response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S&date=${userInput}`)
         console.log('Response Data: ', response.data)
         setPicture(response.data)
     } catch (error) {
@@ -29,6 +30,7 @@ function App() {
 }
 
 
+//Get Social Page Information 
 
   const getPageData = async() =>{
     try {
