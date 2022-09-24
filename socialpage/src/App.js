@@ -57,7 +57,7 @@ function App() {
       <Navbar/>
       <DisplayPageData pageData={page}/>
       <SearchApi pictureData={getPictureData}/>
-      <DisplayApi pictureResuts={picture} />
+      <DisplayApi pictureResults={picture} />
     </div>
   );
 }
