@@ -11,7 +11,7 @@ const DisplayApi = (props) => {
       <div>
         {props.pictureResults.map((item)=>{
           return(<div>
-            <li>{item.explanation}</li>
+            <li>{item}</li>
           </div>)
         })}
       </div>

@@ -51,8 +51,7 @@ function App() {
     getPictureData();
 }, [])
 
- let arrayObject = Object.entries(picture).map(([key, values])=> ({role: key,
-  values}));
+ let arrayObject = Object.values(picture)
   return (
     <div>
       <Navbar/>
