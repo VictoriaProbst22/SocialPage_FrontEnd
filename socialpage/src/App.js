@@ -51,13 +51,14 @@ function App() {
     getPictureData();
 }, [])
 
-
+ let arrayObject = Object.entries(picture).map(([key, values])=> ({role: key,
+  values}));
   return (
     <div>
       <Navbar/>
       <DisplayPageData pageData={page}/>
       <SearchApi pictureData={getPictureData}/>
-      <DisplayApi pictureResults={picture} />
+      <DisplayApi pictureResults={arrayObject} />
     </div>
   );
 }

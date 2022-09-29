@@ -7,7 +7,7 @@ import React, { useState} from "react";
 
 const SearchApi = (props) => {
 
-  const [sTerm, setSTerm] = useState('')
+  const [sTerm, setSTerm] = useState({})
 
     function handleSubmit(event){
         event.preventDefault();
