@@ -2,12 +2,12 @@
 //import pages
 import Navbar from "./NavBar/NavBar";
 import DisplayPageData from "./SocialPages/DisplayPage";
-import DisplayApi from "./NASA API/displayAPI";
-import SearchApi from "./NASA API/searchAPI";
+import SearchApi from "./NASA API/SearchAPI";
 
 //import technologies 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import DisplayApi from "./NASA API/DisplayAPI";
 
 // THIS IS GOING TO TAKE TIME AS IT IS A PERSONAL PROJECT AND ALSO APPLYING FOR SOFTWARE DEVELOPEMENT JOBS. THANKS FOR UNDERSTANDING
 
@@ -23,11 +23,12 @@ function App() {
     try {
         let response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=MwXfSmgO8f2fkgnrhdhwjJQSgXFvKkVnrNjHU92S&date=${userInput}`)
         console.log('Response Data: ', response.data)
-        setPicture(response.data)
+        setPicture(response.data);
     } catch (error) {
         console.log(error.response.data)
     }
 }
+
 
 
 //Get Social Page Information 
@@ -47,17 +48,15 @@ function App() {
 
   }, [])
 
-  useEffect(()=>{
-    getPictureData();
-}, [])
+  
+  
 
- let arrayObject = Object.values(picture)
   return (
     <div>
       <Navbar/>
       <DisplayPageData pageData={page}/>
-      <SearchApi pictureData={getPictureData}/>
-      <DisplayApi pictureResults={arrayObject} />
+      <SearchApi pictureData={getPictureData} />
+      <DisplayApi  pictureResults={picture} />
     </div>
   );
 }

@@ -1,13 +1,9 @@
 import React, { useState} from "react";
 
-
-
-
-
-
 const SearchApi = (props) => {
 
-  const [sTerm, setSTerm] = useState({})
+
+  const [sTerm, setSTerm] = useState('')
 
     function handleSubmit(event){
         event.preventDefault();
@@ -25,7 +21,7 @@ const SearchApi = (props) => {
     return ( 
     <form onSubmit={handleSubmit}>
         <div>
-        <input id="date" type="date" name="search_term" value={sTerm} onChange={onChange}></input>
+        <input type="date" name="search_term" value={sTerm} onChange={onChange}></input>
         <button type="submit"> Search </button>
 
 

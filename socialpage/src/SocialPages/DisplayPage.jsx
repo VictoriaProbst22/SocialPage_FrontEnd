@@ -8,6 +8,7 @@ const DisplayPageData = ({pageData}) => {
     const deletePost = async (el)=>{
         try {
             let response = await axios.delete(`http://127.0.0.1:8000/page/${el.id}/`)
+            console.log(response.data)
         } catch (error) {
             console.log(error.message)
         }
@@ -26,7 +27,7 @@ const DisplayPageData = ({pageData}) => {
             return(
                 
                 <div>
-                
+                   
                     <ul>{item.name}</ul> 
                     <ul>{item.text}</ul> 
                     <ul>{item.date}</ul>
