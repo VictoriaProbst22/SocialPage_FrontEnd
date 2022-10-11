@@ -14,7 +14,8 @@ const DisplayApi = (props) => {
       <h3>Astronomy Picture of the Day</h3>
     {props.pictureResults.map((item)=>{
       return(<div>
-       <li>{item}</li> 
+       <a>{item}</a> 
+       <hr></hr>
       </div>)
     })}
     </div>);
