@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 
 
 const DisplayApi = (props) => {
@@ -12,7 +12,11 @@ const DisplayApi = (props) => {
 
     return ( <div>
       <h3>Astronomy Picture of the Day</h3>
-    
+    {props.pictureResults.map((item)=>{
+      return(<div>
+       <li>{item}</li> 
+      </div>)
+    })}
     </div>);
 }
  

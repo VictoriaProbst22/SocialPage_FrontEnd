@@ -48,6 +48,9 @@ function App() {
 
   }, [])
 
+  let dictionary = 
+    Object.entries(picture)
+    .map( ([key, value]) => ` ${key} :  ${value}` )
   
   
 
@@ -56,7 +59,7 @@ function App() {
       <Navbar/>
       <DisplayPageData pageData={page}/>
       <SearchApi pictureData={getPictureData} />
-      <DisplayApi  pictureResults={picture} />
+      <DisplayApi  pictureResults={dictionary} />
     </div>
   );
 }
